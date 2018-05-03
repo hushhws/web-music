@@ -4,6 +4,11 @@ body {
     line-height: 1.625em;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 p img {
     max-width: 100%;
     display: block;
@@ -12,10 +17,10 @@ p img {
 
 a {
     color: #f8f8f8;
+    text-decoration: none;
 }
 
 a:hover {
-    /* 选中状态下颜色 */
     color: #A99BF9;
 }
 
@@ -34,6 +39,7 @@ a:hover {
 }
 
 
+
 /* header */
 
 header {
@@ -42,6 +48,7 @@ header {
     box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.07);
     border-bottom: none;
     overflow: hidden;
+    display: block;
 }
 
 /* Nav */
@@ -50,6 +57,7 @@ header {
 .navbar-header, .navbar-nav {
     float: left;
     line-height: 65px;
+
 }
 
 .navbar-right {
@@ -72,6 +80,7 @@ header {
     position: relative;
     float: left;
     font-size: 14px;
+
 }
 
 .navbar-nav li {
@@ -110,10 +119,6 @@ header {
 .navbar-sm > li > a {
     border: none;
 }
-
-
-
-
 
 
 
