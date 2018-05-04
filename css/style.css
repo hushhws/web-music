@@ -1,0 +1,198 @@
+/* 轮播图 */
+
+#swiper1 {
+    margin: 50px 0;
+    width: 980px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+#swiper2 {
+    margin: 50px 0;
+    width: 980px;
+    height: 300px;
+}
+
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+}
+
+.swiper-photo {
+    width: 980px;
+    height: 400px;
+}
+
+
+.swiper-album {
+    width: 250px;
+    height: 250px;
+}
+
+/* 推荐 */
+
+.recommend{
+    width: 980px;
+    text-align: center;
+}
+
+.title{
+    font-size: 35px;
+    margin: 20px;
+    color: #647081;
+    letter-spacing: 20px;
+}
+
+/*弹出层*/
+
+/*遮罩层*/
+.pop-mask{
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #000;
+    display: none;
+    z-index: 9999;
+}
+
+
+.pop-layer{
+    display:none;
+    position:fixed;
+    padding: 30px;
+    top: 50%;
+    left: 50%;
+    margin:-185px 0 0 -195px;
+    margin:-185px 0 0 -195px;
+    background: #fff;
+    height: 310px;
+    width:330px;
+    z-index: 10000;
+    border-radius: 10px;
+}
+.pop-layer>.pop-title{
+    height: 24px;
+}
+.pop-layer>.pop-title span{
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 30px;
+    height: 24px;
+}
+.pop-layer>.pop-title>.close{
+    float: right;
+    font-size: 25px;
+    color: #647081;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.pop-layer>.pop-title .active{
+    color:#647081;
+    border-bottom: 2px solid #647081;
+}
+.pop-layer>.pop-content .input,
+.pop-layer>.pop-content .verify{
+    height: 22px;
+    width: 306px;
+    padding: 7px;
+    border:1px solid #52565f;
+    margin-top:20px;
+    display: block;
+}
+/*注册表按钮*/
+.pop-layer>.pop-content .verify-box{
+    width: 330px;
+    height: 40px;
+    position: relative;
+}
+.pop-layer>.pop-content .verify{
+    width: 150px;
+}
+.pop-layer>.pop-content .verify-pic{
+    position: absolute;
+    top: 0;
+    left: 180px;
+}
+.pop-layer>.pop-content .choose{
+    margin:20px 0;
+    font-size: 12px;
+}
+
+.pop-layer>.pop-content .choose input{
+    height: 15px;
+    width: 15px;
+    vertical-align: middle;
+}
+
+.pop-layer>.pop-content .choose a{
+    float: right;
+    color: #52565f;
+    margin-right:9px;
+}
+
+.pop-layer>.pop-content button{
+    width: 326px;
+    height: 44px;
+    margin: 20px 0;
+    background: #647081;
+    color:#fff;
+    border: none;
+    outline: none;
+    display: block;
+}
+.pop-layer>.pop-content button:hover{
+    cursor: pointer;
+}
+
+.pop-layer>.pop-icons {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.pop-layer>.pop-icons a{
+    font-size: 25px;
+    color: #647081;
+    margin:15px;
+}
+
+.pop-layer>.pop-icons a:hover{
+    color: #A99BF9;
+}
+
+.pop-layer>.pop-content .erro{
+    font-size: 12px;
+    color: #647081;
+    float: left;
+    display: none;
+}
+
+
+/* 回到顶部 */
+/*返回顶部按钮*/
+.ui-top{
+    display: block;
+    height: 40px;
+    width: 40px;
+    background: #647081 url("../img/icon-go-up.png") no-repeat center;
+    position: fixed;
+    right: 10px;
+    bottom: 80px;
+    display: none;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+.ui-top:hover{
+    background: #647081;
+}
+.ui-top:hover:after{
+    content: '返回顶部';
+    display: block;
+
+}
