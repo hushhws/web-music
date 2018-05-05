@@ -1,14 +1,14 @@
 /* 轮播图 */
 
 #swiper1 {
-    margin: 50px 0;
+    margin: 25px 0;
     width: 980px;
     height: 400px;
     border-radius: 10px;
 }
 
 #swiper2 {
-    margin: 50px 0;
+    margin: 25px 0;
     width: 980px;
     height: 300px;
 }
@@ -28,13 +28,14 @@
 
 
 .swiper-album {
+    margin-top: 20px;
     width: 250px;
     height: 250px;
 }
 
-/* 推荐 */
+/* 搜索、推荐 */
 
-.recommend{
+.recommend, .search{
     width: 980px;
     text-align: center;
 }
@@ -44,6 +45,39 @@
     margin: 20px;
     color: #647081;
     letter-spacing: 20px;
+}
+
+.content {
+    background: #fff;
+    overflow: hidden;
+}
+
+.content ul li {
+    display: inline-block;
+    margin: 50px 20px;
+    width: 150px;
+}
+
+.content ul li img {
+    width: 150px;
+    height: 150px;
+}
+
+.content ul li a {
+    display: block;
+    color: #647081;
+    background: transparent;
+    cursor: pointer;
+    white-space:nowrap;
+}
+
+.content ul li a:hover {
+    color: #A99BF9;
+}
+
+.content ul li span {
+    display: block;
+    background: transparent;
 }
 
 /*弹出层*/

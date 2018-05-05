@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <script src="js/swiper-3.4.2.min.js"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/index.js"></script>
     <script src="js/main.js"></script>
     <script src="js/ui.js"></script>
 </head>
@@ -28,9 +30,9 @@
                 <li><a href="#">推荐</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right navbar-sm clearfix">
-                <li><input type="text" class="search-input" placeholder="歌名 / 歌手"></li>
-                <li><a href="#"><i class="fa fa-search"></i></a></li>
-                <li><button class=btn>注册 / 登录</button></li>
+                <li><input type="text" class="search-input" id="inp" placeholder="歌名 / 歌手" value="朴树"></li>
+                <li><button class="sbtn" id="sbtn1"><i class="fa fa-search"></i></button></li>
+                <li><button class="btn">注册 / 登录</button></li>
             </ul>
         </nav>
     </div>
@@ -40,7 +42,6 @@
 
 <!-- 轮播图 -->
 <div class="container-sm">
-
     <div class="swiper-container" id="swiper1">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><img class="swiper-photo" src="img/u8.jpg" alt=""></div>
@@ -60,45 +61,55 @@
          -->
     </div>
 
+    <!-- 推荐专辑 -->
     <div class="recommend">
         <h3 class="recommend-title title">推荐</h3>
         <div class="swiper-container" id="swiper2">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/u1.jpg" alt="">
-                    <p>coldplay</p>
+                    <a class="swiper-a" href="">viva la vida</a>
+                    <span class="swiper-span">coldplay</span>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/u2.jpg" alt="">
-                    <p>李志</p>
+                    <a class="swiper-a" href="">2016北京不插电</a>
+                    <span class="swiper-span">李志</span>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/u3.jpg" alt="">
-                    <p>朴树</p>
+                    <a class="swiper-a" href="">猎户星座</a>
+                    <span class="swiper-span">朴树</span>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/u1.jpg" alt="">
-                    <p>coldplay</p>
+                    <a class="swiper-a" href="">viva la vida</a>
+                    <span class="swiper-span">coldplay</span>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/u2.jpg" alt="">
-                    <p>李志</p>
+                    <a class="swiper-a" href="">2016北京不插电</a>
+                    <span class="swiper-span">李志</span>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/u3.jpg" alt="">
-                    <p>朴树</p>
+                    <a class="swiper-a" href="">猎户星座</a>
+                    <span class="swiper-span">朴树</span>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/u1.jpg" alt="">
-                    <p>coldplay</p>
+                    <a class="swiper-a" href="">viva la vida</a>
+                    <span class="swiper-span">coldplay</span>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/u2.jpg" alt="">
-                    <p>李志</p>
+                    <a class="swiper-a" class="swiper-a" href="">2016北京不插电</a>
+                    <span class="swiper-span">李志</span>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/u3.jpg" alt="">
-                    <p>朴树</p>
+                    <a class="swiper-a" href="">猎户星座</a>
+                    <span class="swiper-span">朴树</span>
                 </div>
 
             </div>
@@ -111,11 +122,30 @@
         </div>
     </div>
 
+    <!-- 搜索结果 -->
+    <div class="search" id="search1">
+        <h3 class="search-title title">搜索</h3>
+        <div class="content wrapper">
+            <ul class="clearfix" id="ul1">
+                <li><img src="img/u1.jpg" alt=""><a href="">1</a></li>
+                <li><img src="img/u2.jpg" alt=""><a href="">2</a></li>
+                <li><img src="img/u3.jpg" alt=""><a href="">3</a></li>
+                <li><img src="img/u1.jpg" alt=""><a href="">4</a></li>
+                <li><img src="img/u2.jpg" alt=""><a href="">5</a></li>
+                <li><img src="img/u3.jpg" alt=""><a href="">6</a></li>
+                <li><img src="img/u1.jpg" alt=""><a href="">7</a></li>
+                <li><img src="img/u2.jpg" alt=""><a href="">8</a></li>
+                <li><img src="img/u3.jpg" alt=""><a href="">9</a></li>
+                <li><img src="img/u1.jpg" alt=""><a href="">10</a></li>
+            </ul>
+        </div>
+    </div>
+
 </div>
 
 
 <div class="footer">
-    <div class="content">
+    <div class="foot-content">
         &copy; 2018 软件工程13组
     </div>
 </div>
