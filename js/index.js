@@ -83,7 +83,7 @@ $(document).ready(function () {
     var oul = $('#ul1');
 
     obtn1.click(function(){
-        window.location.href="#search1";
+        //window.location.href="#search1";
         ajax({
             type: 'get',
             url: 'https://api.imjad.cn/cloudmusic/?type=search&s='+oinp.val(),
@@ -120,7 +120,7 @@ $(document).ready(function () {
                 url:'https://api.imjad.cn/cloudmusic/?type=search&s='+oinp.val(),
                 judg: true,
                 success:function(data){
-                    window.location.href="#search1";
+                    //window.location.href="#search1";
                     oul.html('');
                     for(var i=0; i<data.result.songs.length; i++){
                         var oli = $("<li/>");
