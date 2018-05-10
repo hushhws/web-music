@@ -1,14 +1,14 @@
 /* 轮播图 */
 
 #swiper1 {
-    margin: 25px 0;
+    margin: 50px 0;
     width: 980px;
     height: 400px;
     border-radius: 10px;
 }
 
 #swiper2 {
-    margin: 25px 0;
+    margin: 50px 0;
     width: 980px;
     height: 300px;
 }
@@ -17,7 +17,7 @@
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background: #eef7f2;
 
 }
 
@@ -42,13 +42,13 @@
 
 .title{
     font-size: 35px;
-    margin: 20px;
-    color: #647081;
+    margin: 25px;
+    color: #70887d;
     letter-spacing: 20px;
 }
 
 .content {
-    background: #fff;
+    background: #eef7f2;
     overflow: hidden;
 }
 
@@ -65,20 +65,31 @@
 
 .content ul li a {
     display: block;
-    color: #647081;
+    color: #70887d;
     background: transparent;
     cursor: pointer;
     white-space:nowrap;
 }
 
 .content ul li a:hover {
-    color: #A99BF9;
+    color: #314a43;
 }
 
 .content ul li span {
     display: block;
     background: transparent;
 }
+
+/*audio*/
+#vio {
+    float: left;
+    width: 400px;
+    height: 300px;
+}
+
+audio {
+    position: fixed;
+    bottom: 0; }
 
 /*弹出层*/
 
@@ -103,8 +114,7 @@
     top: 50%;
     left: 50%;
     margin:-185px 0 0 -195px;
-    margin:-185px 0 0 -195px;
-    background: #fff;
+    background: #eef7f2;
     height: 310px;
     width:330px;
     z-index: 10000;
@@ -122,20 +132,20 @@
 .pop-layer>.pop-title>.close{
     float: right;
     font-size: 25px;
-    color: #647081;
+    color: #70887d;
     margin: 0 10px;
     cursor: pointer;
 }
 .pop-layer>.pop-title .active{
-    color:#647081;
-    border-bottom: 2px solid #647081;
+    color:#70887d;
+    border-bottom: 2px solid #70887d;
 }
 .pop-layer>.pop-content .input,
 .pop-layer>.pop-content .verify{
     height: 22px;
     width: 306px;
     padding: 7px;
-    border:1px solid #52565f;
+    border:1px solid #70887d;
     margin-top:20px;
     display: block;
 }
@@ -166,7 +176,7 @@
 
 .pop-layer>.pop-content .choose a{
     float: right;
-    color: #52565f;
+    color: #70887d;
     margin-right:9px;
 }
 
@@ -174,8 +184,8 @@
     width: 326px;
     height: 44px;
     margin: 20px 0;
-    background: #647081;
-    color:#fff;
+    background: #70887d;
+    color:#eef7f2;
     border: none;
     outline: none;
     display: block;
@@ -191,17 +201,17 @@
 
 .pop-layer>.pop-icons a{
     font-size: 25px;
-    color: #647081;
+    color: #70887d;
     margin:15px;
 }
 
 .pop-layer>.pop-icons a:hover{
-    color: #A99BF9;
+    color: #314a43;
 }
 
 .pop-layer>.pop-content .erro{
     font-size: 12px;
-    color: #647081;
+    color: #70887d;
     float: left;
     display: none;
 }
@@ -213,17 +223,17 @@
     display: block;
     height: 40px;
     width: 40px;
-    background: #647081 url("../img/icon-go-up.png") no-repeat center;
+    background: #70887d url("../img/icon-go-up.png") no-repeat center;
     position: fixed;
     right: 10px;
     bottom: 80px;
     display: none;
     font-size: 14px;
-    color: #fff;
+    color: #eef7f2;
     text-align: center;
 }
 .ui-top:hover{
-    background: #647081;
+    background: #70887d;
 }
 .ui-top:hover:after{
     content: '返回顶部';

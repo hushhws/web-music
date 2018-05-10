@@ -82,6 +82,7 @@ $(document).ready(function () {
     var oinp = $('#inp');
     var oul = $('#ul1');
 
+
     obtn1.click(function(){
         //window.location.href="#search1";
         ajax({
@@ -114,7 +115,7 @@ $(document).ready(function () {
 
     oinp.keyup(function(eve){
         if(eve.keyCode == 13){
-            console.log("13");
+            //console.log("13");
             ajax({
                 type: 'get',
                 url:'https://api.imjad.cn/cloudmusic/?type=search&s='+oinp.val(),
@@ -134,6 +135,7 @@ $(document).ready(function () {
                         titleA.html(data.result.songs[i].name);
                         titleA.css('cursor', 'pointer');
                         ospan.html(data.result.songs[i].ar[0].name);
+                        ospan.css('cursor', 'pointer');
                         oli.append(oimg);
                         oli.append(titleA);
                         oli.append(ospan);
@@ -141,6 +143,78 @@ $(document).ready(function () {
                     }
                 }
 
+            })
+        }
+    })
+
+    oul.click(function(e){
+        console.log("click.");
+        var oEvent = e || window.event;
+        var target = oEvent.srcElement || oEvent.target;
+
+        if(target.nodeName.toLowerCase() == 'img'){
+            var mv_id = target.getAttribute('data-id');
+            if(mv_id==0)
+                alert('no mv');
+            else {
+                ajax({
+                    type: 'get',
+                    url: 'https://api.imjad.cn/cloudmusic/?type=mv&id=' + mv_id,
+                    judg: true,
+                    success: function (data) {
+                        var ovio = $('#vio');
+                        ovio.attr('src', data.data.brs["480"]);
+                    }
+                })
+            }
+        }
+
+        if(target.nodeName.toLowerCase()== 'a' ){
+            ajax({
+                type:'get',
+                url: 'https://api.imjad.cn/cloudmusic/?type=song&id='+target.getAttribute('data-song')+'&br=128000',
+                judg:true,
+                success: function (data) {
+                    var oaud = $('#aaud');
+                    oaud.attr('src',data.data[0].url);
+/*
+                    ajax({
+                        type: 'get',
+                        url: 'https://api.imjad.cn/cloudmusic/?type=lyric&id='+target.getAttribute('data-song')+'&br=128000',
+                        judg:true,
+                        success:function(data){
+                            var lyric = data.lrc.lyric;
+
+                            var timeReg = /\[\d{2}\:\d{2}\.\d{1,3}]/g;
+                            var time = lyric.match(timeReg);
+
+                            var Alyric = [];
+                            var lyrics = lyric.replace(timeReg,'');
+                            var Alyric = lyrics.split('\n');
+
+                            var Atime =[];
+                            for(var i=0; i<time.length-1;i++){
+                                seconds = time[i].toString().slice(1,-1).split(':');
+
+                                seconds = parseInt (seconds[0])*60 + parseInt(seconds[1]);
+                                Atime[i]=seconds
+                            }
+
+                            aud.ontimeupdate = function () {
+                                var oul1 = $('#lyricontent');
+                                for(var i=0; i<Atime.length; i++){
+                                    if(this.currentTime>Atime[i]){
+                                        oul1.html('');
+                                        var li = $("<li/>")
+                                        li.html(Alyric[i]);
+                                        oul1.append(li)
+                                    }
+                                }
+                            }
+                        }
+                    })
+*/
+                }
             })
         }
     })
