@@ -1,5 +1,4 @@
 // 轮播图组件
-
 $(document).ready(function () {
     var mySwiper1 = new Swiper ('#swiper1', {
         loop : true,//开启循环
@@ -11,7 +10,7 @@ $(document).ready(function () {
         //initialSlide :1,//设置初始页面
         direction : 'horizontal',//滑行方向 （vertical）
         speed: 1000,
-        //grabCursor : true,//鼠标切换成手形态
+        grabCursor : true,//鼠标切换成手形态
         nextButton: '.swiper-button-next',     //前进后退按钮
         prevButton: '.swiper-button-prev',
     })
@@ -26,7 +25,10 @@ $(document).ready(function () {
         nextButton: '.swiper-button-next',     //前进后退按钮
         prevButton: '.swiper-button-prev',
     })
-})
+
+    $('body').UiBackTop();
+
+});
 
 
 //返回顶部组件
@@ -49,4 +51,5 @@ $.fn.UiBackTop=function () {
         },300)
     })
 }
+
 

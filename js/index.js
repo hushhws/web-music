@@ -60,7 +60,7 @@ window.onload = function () {
                     oimg.setAttribute('src',data.result.songs[i].al.picUrl);
                     oimg.setAttribute('data-id',data.result.songs[i].mv);
                     oimg.style.cursor = 'pointer';
-                    // titleA.innerHTML = data.result.songs[i].al.name;     //好像是专辑
+                    // titleA.innerHTML = data.result.songs[i].al.name;
                     titleA.setAttribute('data-song',data.result.songs[i].id);
                     titleA.innerHTML = data.result.songs[i].name;
                     titleA.style.cursor = 'pointer';
@@ -148,10 +148,14 @@ $(document).ready(function () {
     })
 
     oul.click(function(e){
-        console.log("click.");
         var oEvent = e || window.event;
         var target = oEvent.srcElement || oEvent.target;
 
+        if(target.nodeName.toLowerCase() == 'a') {
+            window.open("play.html?data-song=" + target.getAttribute('data-song'));
+        }
+
+        /*
         if(target.nodeName.toLowerCase() == 'img'){
             var mv_id = target.getAttribute('data-id');
             if(mv_id==0)
@@ -177,7 +181,7 @@ $(document).ready(function () {
                 success: function (data) {
                     var oaud = $('#aaud');
                     oaud.attr('src',data.data[0].url);
-/*
+
                     ajax({
                         type: 'get',
                         url: 'https://api.imjad.cn/cloudmusic/?type=lyric&id='+target.getAttribute('data-song')+'&br=128000',
@@ -213,11 +217,12 @@ $(document).ready(function () {
                             }
                         }
                     })
-*/
+
                 }
             })
         }
+        */
     })
 
-})
 
+});

@@ -10,7 +10,7 @@
     <script src="js/swiper-3.4.2.min.js"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/ajax.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/song-sheet.js"></script>
     <script src="js/main.js"></script>
     <script src="js/ui.js"></script>
 </head>
@@ -25,13 +25,13 @@
         </div>
         <nav>
             <ul class="nav navbar-nav navbar-left clearfix">
-                <li class="active"><a href="index.html">首页</a></li>
-                <li><a href="song-sheet.html?data-playlist=2041968767">歌单</a></li>
+                <li ><a href="index.html">首页</a></li>
+                <li class="active"><a href="song-sheet.html?data-playlist=2041968767">歌单</a></li>
                 <li><a href="#">推荐</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right navbar-sm clearfix">
-                <li><input type="text" class="search-input" id="inp" placeholder="歌名 / 歌手" value="朴树"></li>
-                <li><button class="sbtn" id="sbtn1"><i class="fa fa-search"></i></button></li>
+                <li><input type="text" class="search-input" id="sheet-inp" placeholder="歌单" value="你推荐的歌我都听过"></li>
+                <li><button class="sbtn" id="sheet-sbtn1"><i class="fa fa-search"></i></button></li>
                 <li><button class="btn">注册 / 登录</button></li>
             </ul>
         </nav>
@@ -42,26 +42,6 @@
 
 <!-- 轮播图 -->
 <div class="container-sm">
-    <div class="swiper-container" id="swiper1">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img class="swiper-photo" src="img/lb1.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="swiper-photo" src="img/lb2.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="swiper-photo" src="img/lb3.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="swiper-photo" src="img/lb4.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="swiper-photo" src="img/lb5.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="swiper-photo" src="img/lb6.jpg" alt=""></div>
-        </div>
-        <!-- 如果需要分页器 -->
-        <div class="swiper-pagination"></div>
-
-        <!-- 如果需要导航按钮 -->
-        <div class="swiper-button-prev swiper-button-white"></div>
-        <div class="swiper-button-next swiper-button-white"></div>
-
-        <!-- 如果需要滚动条
-        <div class="swiper-scrollbar"></div>
-         -->
-    </div>
 
     <!-- 推荐专辑 -->
     <div class="recommend">
@@ -70,39 +50,39 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/tj1.jpg" alt="">
-                    <a class="swiper-a" target="_blank" href="http://localhost:63342/software%20engineering%20program/play.html?data-song=25706282">《夜空中最亮的星》</a>
+                    <a class="swiper-a" href="">《夜空中最亮的星》</a>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/tj2.jpg" alt="">
-                    <a class="swiper-a" target="_blank" href="http://localhost:63342/software%20engineering%20program/play.html?data-song=29771089">《他妈的》</a>
+                    <a class="swiper-a" href="">《他妈的》</a>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/tj3.jpg" alt="">
-                    <a class="swiper-a" target="_blank" href="http://localhost:63342/software%20engineering%20program/play.html?data-song=814537">《ALIVE》</a>
+                    <a class="swiper-a" href="">《ALIVE》</a>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/tj4.jpg" alt="">
-                    <a class="swiper-a" target="_blank" href="http://localhost:63342/software%20engineering%20program/play.html?data-song=26830946">《viva la vida》</a>
+                    <a class="swiper-a" href="">《viva la vida》</a>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/tj5.jpg" alt="">
-                    <a class="swiper-a" target="_blank" href="http://localhost:63342/software%20engineering%20program/play.html?data-song=424474914">《定西》</a>
+                    <a class="swiper-a" href="">《定西》</a>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/tj6.jpg" alt="">
-                    <a class="swiper-a" target="_blank" href="http://localhost:63342/software%20engineering%20program/play.html?data-song=518896134">《猎户星座》</a>
+                    <a class="swiper-a" href="">《猎户星座》</a>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/tj7.jpg" alt="">
-                    <a class="swiper-a" target="_blank" href="http://localhost:63342/software%20engineering%20program/play.html?data-song=447925066">《八十年代的歌》</a>
+                    <a class="swiper-a" href="">《八十年代的歌》</a>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/tj8.jpg" alt="">
-                    <a class="swiper-a" target="_blank" href="http://localhost:63342/software%20engineering%20program/play.html?data-song=27510434">《猛犸》</a>
+                    <a class="swiper-a" href="">《猛犸》</a>
                 </div>
                 <div class="swiper-slide">
                     <img class="swiper-album" src="img/tj9.jpg" alt="">
-                    <a class="swiper-a" target="_blank" href="http://localhost:63342/software%20engineering%20program/play.html?data-song=468878043">《阿拉善》</a>
+                    <a class="swiper-a" href="">《阿拉善》</a>
                 </div>
 
             </div>
