@@ -2,9 +2,176 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>music</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon1.png" />
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <script src="js/swiper-3.4.2.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/recommend.js"></script>
 </head>
+
 <body>
-$END$
+<!-- 导航栏 -->
+<header>
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a href="index.html" class="navbar-brand">
+                <img src="img/icon.png" alt="brand">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav navbar-nav navbar-left clearfix">
+                <li class="active"><a href="index.html">首页</a></li>
+                <li><a href="song-sheet.html?data-playlist=2041968767">歌单</a></li>
+                <li><a href="recommend.html">推荐</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right navbar-sm clearfix">
+                <li><button class="btn">注册 / 登录</button></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- 首页主界面 -->
+<div class="container-sm">
+
+    <!-- 推荐专辑 -->
+    <div class="recommend">
+        <h3 class="recommend-title title">推荐</h3>
+        <div class="swiper-container" id="swiper2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img class="swiper-album" src="img/tj1.jpg" alt="">
+                    <a class="swiper-a" target="_blank" href="play.html?data-song=25706282">《夜空中最亮的星》</a>
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-album" src="img/tj2.jpg" alt="">
+                    <a class="swiper-a" target="_blank" href="play.html?data-song=29771089">《他妈的》</a>
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-album" src="img/tj3.jpg" alt="">
+                    <a class="swiper-a" target="_blank" href="play.html?data-song=814537">《ALIVE》</a>
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-album" src="img/tj4.jpg" alt="">
+                    <a class="swiper-a" target="_blank" href="play.html?data-song=26830946">《viva la vida》</a>
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-album" src="img/tj5.jpg" alt="">
+                    <a class="swiper-a" target="_blank" href="play.html?data-song=424474914">《定西》</a>
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-album" src="img/tj6.jpg" alt="">
+                    <a class="swiper-a" target="_blank" href="play.html?data-song=518896134">《猎户星座》</a>
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-album" src="img/tj7.jpg" alt="">
+                    <a class="swiper-a" target="_blank" href="play.html?data-song=447925066">《八十年代的歌》</a>
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-album" src="img/tj8.jpg" alt="">
+                    <a class="swiper-a" target="_blank" href="play.html?data-song=27510434">《猛犸》</a>
+                </div>
+                <div class="swiper-slide">
+                    <img class="swiper-album" src="img/tj9.jpg" alt="">
+                    <a class="swiper-a" target="_blank" href="play.html?data-song=468878043">《阿拉善》</a>
+                </div>
+
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev swiper-button-white"></div>
+            <div class="swiper-button-next swiper-button-white"></div>
+        </div>
+    </div>
+
+    <div class="auto-recommend" >
+        <div class="auto-recommend-title" id="auto-recommend-title"> 选择你喜欢的音乐类型 </div>
+        <div class="auto-recommend-choose">
+            <ul class="clearfix">
+                <li><button class="recommend-btn" id="recommend-btn1">华语</button></li>
+                <li><button class="recommend-btn" id="recommend-btn2" >民谣</button></li>
+                <li><button class="recommend-btn" id="recommend-btn3" >摇滚</button></li>
+                <li><button class="recommend-btn" id="recommend-btn4" >流行</button></li>
+                <li><button class="recommend-btn" id="recommend-btn5" >英伦</button></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- 搜索结果 -->
+    <div class="recommend-result" id="recommend-result">
+        <!-- <h3 class="search-title title">搜索</h3> -->
+        <div class="content wrapper">
+            <ul class="clearfix" id="recommend-ul">
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<div class="footer">
+    <div class="foot-content">
+        &copy; 2018 软件工程13组
+    </div>
+</div>
+
+<!--弹出层-->
+<!--遮罩层-->
+<div class="pop-mask"></div>
+<!--弹出层-->
+<div class="pop-layer">
+    <div class="pop-title">
+        <span class="active login"  >登录</span>
+        <span class="register">注册</span>
+        <i class="fa fa-close close"></i>
+    </div>
+    <div class="pop-content"></div>
+    <div class="pop-icons">
+        <a href="#"><i class="fa fa-weixin"></i></a>
+        <a href="#"><i class="fa fa-qq"></i></a>
+        <a href="#"><i class="fa fa-weibo"></i></a>
+    </div>
+</div>
+<!--弹出层具体内容-->
+<div class="pop-content-hide" style="display: none">
+    <!--登录窗体内容-->
+    <div class="login-window" >
+        <input type="text" class="input" name="account" placeholder="请输入登录邮箱/手机号">
+        <div class="erro erro-name">请输入正确的邮箱或手机号</div>
+        <input type="password" class="input" name="password" placeholder="6-16位密码，区分大小写，不能用空格">
+        <div class="erro erro-psd">请输入6-16位密码，区分大小写，不能使用空格！</div>
+        <div class="choose">
+            <input type="checkbox"><label>下次自动登录</label>
+            <a href="">忘记密码</a>
+        </div>
+        <button>登录</button>
+    </div>
+    <!--注册窗体内容-->
+    <div class="register-window">
+        <input type="text" class="input" name="account" placeholder="请输入注册邮箱/手机号">
+        <div class="erro erro-name">请输入正确的邮箱或手机号</div>
+        <div class="verify-box">
+            <input type="text" class="input verify" name="verify" placeholder="请输入验证码">
+            <img src="img/verify.png" class="verify-pic" alt="">
+        </div>
+        <div class="erro erro-verify">验证码错误</div>
+        <button>注册</button>
+    </div>
+</div>
+
+
 </body>
 </html>
